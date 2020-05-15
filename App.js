@@ -58,21 +58,44 @@ class App extends Component {
     }
 
   render() {
+    // <img src="https://uisrv.thotakaa.com/react/insights-app/media/thumb_1.jpg"></img>
     let jsCode = ``;
 
     const html = `      
-        <div style="font-size:`+Title+`px;">HTml goes here</div>
+        <div style="font-size:`+Title+`px;">HTml goes here</div>  
+        <div>Image from local</div>      
+        <img src="./article-thumbnail.png" width="500" heigh="100" alt="test">
+        
+        <div>Image from server url</div>
+        <img src="https://uisrv.thotakaa.com/react/insights-app/media/thumb_1.jpg">
+
+        <div>Loaded from dynamic link</div>
         <div id="react-strategy-list">Replace With react Markup</div>
+
         <script src="https://uisrv.thotakaa.com/react/strategy-links/strategy-links.1585836301774.js"></script>
     `;
       return(
         <View style={{flex: 1}}>
           {/* <GraphBar /> */}
-          <WebVie
+          <WebView
+            originWhitelist={['*']}            
             source={{ html: html }}
             javaScriptEnabled={true}
             scalesPageToFit={true}
+            domStorageEnabled={true}
+            allowFileAccess={true}
+            allowUniversalAccessFromFileURLs={true}
+            baseUrl={'/html'}
           />            
+
+          {/* <WebView
+            originWhitelist={['*']}
+            source={require('./html/indexHtml.js')}
+            baseUrl={'./html'}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            startInLoadingState={true}
+            /> */}
         </View>
       )
   }

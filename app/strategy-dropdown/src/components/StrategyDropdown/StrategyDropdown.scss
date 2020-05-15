@@ -1,0 +1,119 @@
+.sub-menu-wrap {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .menu-item {
+        float: none;
+
+        a {
+            color: #537FA0;
+            font-size: 13px;
+            font-family: "Nunito Sans", sans-serif;
+            padding: 6px 13px;
+            display: block;
+            border-bottom: 1px solid rgba(171, 174, 196, 0.48);
+            text-decoration: none;
+        }
+        &:last-child {
+            a {
+                border-bottom: 0;
+            }
+        }
+
+        .strategy {
+            &-element {
+                display: flex;
+
+                &-title {
+                    color: #537FA0;
+                    font-family: "Nunito Sans";
+                    font-size: 13px;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    flex: 1;
+                }
+                &-value {
+                    font-family: "Nunito Sans";
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 22px;
+                    text-align: right;
+                    padding-right: 10px;
+
+                    &.green {
+                        color: #1BCF68;
+                    }
+                    &.red {
+                        color: #F66274;                        
+                    }
+                    .postfix {
+                        font-size: 12px;
+                        letter-spacing: 0;
+                        line-height: 15px;
+                    }
+                }
+            }            
+        }
+    }
+    @media(min-width: 991px){
+        min-width: 360px;
+    }
+}
+
+@keyframes gradient {
+    100% {
+        transform: translateX(100%) rotate(0deg);
+    }
+}
+
+.menu {
+    &-item {
+        &-mask {
+            display: flex;
+            justify-content: space-between;        
+            border-bottom: 1px solid rgba(171, 174, 196, 0.48);
+            padding: 7px 13px;
+
+            &:last-child {            
+                border-bottom: 0;                
+            }
+
+            span {
+                height: 20px;
+                width: 100%;
+                max-width: 100px;
+                position: relative;
+                overflow: hidden;
+                display: block;
+                background: rgba(0, 0, 0, 0.08);
+
+                &:after {
+                    background: linear-gradient(90deg, rgba(224, 224, 224, 0), rgba(224, 224, 224, 0.2) 30%, rgba(224, 224, 224, 0.9) 50%, rgba(224, 224, 224, 0));
+                    animation: gradient 1600ms infinite;
+                    animation-timing-function: cubic-bezier(0.38, 0.55, 0.34, 0.95);
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateX(-100%) rotate(0deg);
+                    border-radius: 5px;
+                }    
+            }
+            div {
+                display: flex;                
+                span {
+                    width: 35px;
+                    margin-left: 10px;
+                    &:last-child {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
