@@ -1,7 +1,8 @@
 import React from 'react';
 import './Shared.scss';
 
-import GraphBar from '../../SharedComponents/graph-bar/graph-bar';
+import GraphBar from '@bit/hipolucas.react_apps.graph-bar';
+
 import Content from '../../SharedComponents/Content';
 import Tables from '../../SharedComponents/Tables';
 
@@ -10,23 +11,23 @@ class Shared extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            graphBar:{
-                title: 'Monthly Cash Outflow',
-                crosshair: false,
-                outflowData: {
-                    name: 'Outflow:',
-                    data: [115360, 54950, 76550, 77050, 95000, 94900, 115900, 161900, 162100, 198300, 229300, 255500, 474780, 297790, 324901, 354944, 387990, 424341, 464327, 508313, 556694, 609914, 668459, 732858],
-                    color: '#F4A24C',
-                },
-                xAxis: ['Jan 19', 'Feb 19', 'Mar 19', 'Apr 19', 'May 19', 'Jun 19','Jul 19', 'Aug 19', 'Sep 19', 'Oct 19', 'Nov 19', 'Dec 19', 'Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'May 20', 'Jun 20','Jul 20', 'Aug 20', 'Sep 20', 'Oct 20', 'Nov 20', 'Dec 20'],
-                series: [{
-                    name: 'Outflow:',
-                    data: [115360, 54950, 76550, 77050, 95000, 94900, 115900, 161900, 162100, 198300, 229300, 255500, 474780, 297790, 324901, 354944, 387990, 424341, 464327, 508313, 556694, 609914, 668459, 732858],
-                    color: '#F4A24C',
-                }],
-                legend: false,
-                resetToggle: false
-            },
+            // graphBar:{
+            //     title: 'Monthly Cash Outflow',
+            //     crosshair: false,
+            //     outflowData: {
+            //         name: 'Outflow:',
+            //         data: [115360, 54950, 76550, 77050, 95000, 94900, 115900, 161900, 162100, 198300, 229300, 255500, 474780, 297790, 324901, 354944, 387990, 424341, 464327, 508313, 556694, 609914, 668459, 732858],
+            //         color: '#F4A24C',
+            //     },
+            //     xAxis: ['Jan 19', 'Feb 19', 'Mar 19', 'Apr 19', 'May 19', 'Jun 19','Jul 19', 'Aug 19', 'Sep 19', 'Oct 19', 'Nov 19', 'Dec 19', 'Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'May 20', 'Jun 20','Jul 20', 'Aug 20', 'Sep 20', 'Oct 20', 'Nov 20', 'Dec 20'],
+            //     series: [{
+            //         name: 'Outflow:',
+            //         data: [115360, 54950, 76550, 77050, 95000, 94900, 115900, 161900, 162100, 198300, 229300, 255500, 474780, 297790, 324901, 354944, 387990, 424341, 464327, 508313, 556694, 609914, 668459, 732858],
+            //         color: '#F4A24C',
+            //     }],
+            //     legend: false,
+            //     resetToggle: false
+            // },
             graphDonutData: [
                 {
                     name: 'Asset & Investment',
@@ -115,7 +116,7 @@ class Shared extends React.Component{
             <>
                 <div className="container">
                     <div className="graph-container">
-                        <GraphBar data={this.state.graphBar} />  
+                        <GraphBar />
                     </div>
                     {/* <Content /> */}
                     <Tables />
